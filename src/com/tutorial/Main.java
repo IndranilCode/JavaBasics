@@ -7,6 +7,8 @@ import demo.inheritence.abstractClass.Payment;
 import demo.inheritence.constructor.order.ClassB;
 import demo.inheritence.method.overriding.ClassC;
 import demo.inheritence.method.overriding.ClassD;
+import demo.interfaceExamples.BOABankActivity;
+import demo.interfaceExamples.BankActivity;
 
 import java.util.Date;
 
@@ -55,6 +57,29 @@ public class Main {
         objClassC2.methodDemo(); //Calls ClassD method
         objClassC2.methodDemo2(); //Contains call to super => hence base then child
         //ClassD objClassD2 = new ClassC(6); //Not possible => create child from parent reference
+//        ClassD objClassD3 = (ClassD) new ClassC(7); //Allowed - as we are casting explicitly
+//        objClassD3.methodDemo();
+//        objClassD3.methodDemo2();
+
+        //3a. Interface - Basic implementation
+        System.out.println("---------------3a. Interface - Basic implementation-------------------------------------------------------------------");
+        BOABankActivity bank1 = new BOABankActivity();
+        bank1.method1();
+        bank1.method2();
+        bank1.method3();
+        //BOABankActivity.method4(); //NOT Allowed to call static from class reference
+        //bank1.method5(); //NOT Allowed to call private method from class reference
+        bank1.method6();
+
+        BankActivity.method4(); //Allowed to call static from interface reference
+
+        BankActivity bank2 = new BOABankActivity();
+        bank1.method1();
+        bank1.method2();
+        bank1.method3();
+        //bank2.method4(); //Not allowed
+        //bank2.method5(); //Not allowed to call private method from interface
+        bank2.method6();
 
     }
 }
