@@ -5,6 +5,8 @@ import demo.constructor.ConstructorDemo2;
 import demo.inheritence.abstractClass.CardPayment;
 import demo.inheritence.abstractClass.Payment;
 import demo.inheritence.constructor.order.ClassB;
+import demo.inheritence.method.overriding.ClassC;
+import demo.inheritence.method.overriding.ClassD;
 
 import java.util.Date;
 
@@ -42,6 +44,16 @@ public class Main {
         CardPayment cp2 = new CardPayment(1, new Date(), "12345", "123"); //Payment.param const -> CardPayment.param const
         cp2.printPaymentDetails();
         cp2.printReceipt();
+
+        //2c. InheritanceDemo - Method overriding
+        System.out.println("---------------2c. InheritanceDemo - Method overriding----------------------------------------------------------------");
+        ClassC objClassC = new ClassC(1);
+        objClassC.methodDemo(); //Calls ClassC method
+        ClassD objClassD = new ClassD(2, 3);
+        objClassD.methodDemo(); //Calls ClassD method
+        ClassC objClassC2 = new ClassD(4,5); //Possible => creating parent from child reference
+        objClassC2.methodDemo(); //Calls ClassD method
+        //ClassD objClassD2 = new ClassC(6); //Not possible => create child from parent reference
 
     }
 }
