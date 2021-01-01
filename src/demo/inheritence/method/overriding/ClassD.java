@@ -11,4 +11,9 @@ public class ClassD extends ClassC {
     public void methodDemo() {
         System.out.println("ClassD.methodDemo. FieldC :" + this.fieldC + " FieldD :" + fieldD);
     }
+
+    public void methodDemo2() {
+        super.methodDemo2(); //Calls the base class method
+        System.out.println("ClassD.methodDemo. FieldC :" + this.fieldC + " FieldD :" + fieldD);
+    }
 }

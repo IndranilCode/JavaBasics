@@ -53,6 +53,7 @@ public class Main {
         objClassD.methodDemo(); //Calls ClassD method
         ClassC objClassC2 = new ClassD(4,5); //Possible => creating parent from child reference
         objClassC2.methodDemo(); //Calls ClassD method
+        objClassC2.methodDemo2(); //Contains call to super => hence base then child
         //ClassD objClassD2 = new ClassC(6); //Not possible => create child from parent reference
 
     }

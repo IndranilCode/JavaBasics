@@ -10,4 +10,8 @@ public class ClassC {
     public void methodDemo() {
         System.out.println("ClassC.methodDemo. FieldC :" + this.fieldC);
     }
+
+    public void methodDemo2() {
+        System.out.println("ClassC.methodDemo. FieldC :" + this.fieldC);
+    }
 }
